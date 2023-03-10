@@ -26,6 +26,12 @@ public class RunnerGeneric {
         //list.get(2);
         //list.get(3); //ClassCastException'dan kurtulduk
 
+        //=================COKLU DATA TIPI ILE GENERIC CLASS=================
+        GenericClassTwoParam<String,Integer> myMap = new GenericClassTwoParam<>();
+        myMap.setS("Generic");
+        myMap.setU(99);
+
+        System.out.println(myMap.getS()+"  "+myMap.getU());
 
 
 
