@@ -1,5 +1,5 @@
 package Generics.classes;
-//public class class_name<T>
+// public class class_name<T>
 public class GenericClass<T> {
 
     private T type;

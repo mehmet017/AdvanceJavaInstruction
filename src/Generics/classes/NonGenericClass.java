@@ -1,8 +1,10 @@
 package Generics.classes;
 
 public class NonGenericClass {
-    //field(ozellik): farkli data tiplerini referans alsin
 
+    //field(özellik):farklı data tiplerini referans alsın
+
+    //private T type;
     private Object object;
 
     public Object getObject() {
