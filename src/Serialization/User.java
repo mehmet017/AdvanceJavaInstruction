@@ -1,20 +1,23 @@
 package Serialization;
 
-public class User {
+import java.io.Serializable;
+//bu classın objeleri serileştirilebilsin diye belirttik
+public class User implements Serializable {
 
     //field
-    private  long id;
+    private long id;
     private String name;
     private String tc_no;
 
     //constructor
-
-
     public User(long id, String name, String tc_no) {
         this.id = id;
         this.name = name;
         this.tc_no = tc_no;
     }
+
+    //getter-setter
+
 
     public long getId() {
         return id;

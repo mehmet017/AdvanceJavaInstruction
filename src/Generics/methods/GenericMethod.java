@@ -59,6 +59,8 @@ public class GenericMethod {
 
     //birden fazla generic tip parametresi alan metod
     public static <S,U> void printArrAndObject(S[] arr,U object){
+      //  arr[0]=object;//CTE, S object olursa CTE vermez.
+
         Arrays.stream(arr).forEach(t-> System.out.print(t+" "));
         System.out.println();
         System.out.println(object);
