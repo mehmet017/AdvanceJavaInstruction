@@ -10,7 +10,7 @@ public class Multithreading01 {
         counter2.countMe();
         long finish=System.currentTimeMillis();
 
-        System.out.println("WithoutMultiThread ile geçen süre : "+(finish-start));
+        System.out.println("WithoutMultiThread ile geçen süre : "+(finish-start));//10 sn...
 
         System.out.println("-----------------------------");
 
@@ -31,8 +31,9 @@ public class Multithreading01 {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
         long finishTime=System.currentTimeMillis();
-        System.out.println("WithMultiThread ile geçen süre : "+(finishTime-startTime));
+        System.out.println("WithMultiThread ile geçen süre : "+(finishTime-startTime));//5sn
 
     }
 
@@ -66,7 +67,7 @@ class CounterWithMultiThread extends Thread{
     public CounterWithMultiThread(String name) {
         this.name = name;
     }
-    //thread ile ekrana 1 den 10 a kadar yazdırma
+//thread ile ekrana 1 den 10 a kadar yazdırma
     @Override
     public void run() {
         System.out.println(Thread.currentThread().getName()+" çalışmaya başladı.");

@@ -2,49 +2,42 @@ package Threads;
 
 public class Multithreading03 {
     public static void main(String[] args) {
-        Brackets brackets = new Brackets();
-        Thread thread1 = new Thread(new Runnable() {
+        Brackets brackets=new Brackets();
+
+        Thread thread1=new Thread(new Runnable() {
             @Override
             public void run() {
-              for (int i=1;i<=9;i++){
-                  brackets.generateBracket();
-              }
+                for (int i=1;i<=9;i++){
+                    brackets.generateBrackets();
+                }
             }
         });
         thread1.start();
 
-        Thread thread2 = new Thread(new Runnable() {
+        Thread thread2=new Thread(new Runnable() {
             @Override
             public void run() {
                 for (int i=1;i<=9;i++){
-                    brackets.generateBracket();
+                    brackets.generateBrackets();
                 }
             }
         });
-
         thread2.start();
-
-
     }
-//iki thread aynı anda methoda erişmee çalıştığğında methodun içindeki işlem tamamlanmadan
-//diğer thread işleme başlayabiliyor, bu sebeple sırayla erişmelerini istiyoruz
+    //iki thread aynı anda metoda erişmeye çalıştığında metodun içindeki işlem tamamlanmadan
+    //diğer thread işleme başlayabiliyor, bu sebeple sırayla erişmelerini istiyoruz.
 
 }
 class Brackets{
-    //[[[[[]]]] şeklini ekrana yazdıran bir method
-    public synchronized void generateBracket(){
+    //[ [ [ [ [ ] ] ] ] ] şeklini ekrana yazdıran bir metod
+    public synchronized void generateBrackets(){
         for (int i=1;i<=10;i++){
-            if (i<=5){
+            if(i<=5){
                 System.out.print("[ ");
-            }else {
+            }else{
                 System.out.print("] ");
             }
-
-
         }
         System.out.println();
-
     }
-
-
 }

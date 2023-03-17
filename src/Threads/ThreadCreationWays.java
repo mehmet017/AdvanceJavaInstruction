@@ -1,5 +1,6 @@
 package Threads;
-
+//Thread bir processin parçasıdır, birden fazla thread kullandığımızda
+//multithreading yaparak eş zamanlı görevler yapabiliriz, CPU en verimli şekilde kullanabiliriz.
 public class ThreadCreationWays {
     public static void main(String[] args) {
         //ilk çalışan thread main threaddir, görelim:
@@ -7,6 +8,7 @@ public class ThreadCreationWays {
 
         //Thread classını extend ederek
         MyThread thread1=new MyThread();
+        //thread1.run();//run metodu içindeki kodlar çağrılır
         thread1.start();
         //start metodu threar oluşturur, override edilen run metodunu çağırır ve içerisindeki işlemleri
         //gerçekleştirir.
@@ -37,7 +39,7 @@ public class ThreadCreationWays {
 
         //annonymous(isimsiz) class ile thread oluşturma:2
         //lambda exp kullanarak
-        Thread thread4=new Thread(()-> {
+        Thread thread4=new Thread( ()->{
             Thread.currentThread().setName("harika");
             System.out.println("Current thread:"+Thread.currentThread().getName());
             System.out.println("Bu thread lambda ile oluşturuldu.");
@@ -76,3 +78,5 @@ class MyRunnable implements Runnable{
         System.out.println("MyRunnable ile oluşturduğumuz thread çalışıyor.");
     }
 }
+
+
